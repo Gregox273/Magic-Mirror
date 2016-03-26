@@ -3,8 +3,8 @@
 1.MXC6225XU accelerometer (http://www.memsic.com/userfiles/files/Application-Notes/an-00mx-007.pdf)
 2.MMC314xMS magnetic sensor
   (http://tjworld.net/raw-attachment/wiki/Android/Tegra/NotionInk/Adam/HardwareSpecifications/Memsic_MMC314xMS_Rev_A_Datasheet.pdf)
-*3.RD-622 PIR motion sensor (http://www.winsen-sensor.com/d/files/pyroelectric/rd-622/rd622.pdf)
-*4.MQ-135 gas sensor (https://www.olimex.com/Products/Components/Sensors/SNS-MQ135/resources/SNS-MQ135.pdf)
+3.RD-622 PIR motion sensor (http://www.winsen-sensor.com/d/files/pyroelectric/rd-622/rd622.pdf)
+4.MQ-135 gas sensor (https://www.olimex.com/Products/Components/Sensors/SNS-MQ135/resources/SNS-MQ135.pdf)
 5.MQ303B alcohol sensor (http://www.datasheetspdf.com/PDF/MQ303B/904652/1)
 *6.MSP40 GDF analogue pressure sensor (http://www.memsensing.com/webupfile/1439885201641144363.7-CHS.pdf)
 7.MSMAS42Z microphone (can't find datasheet, using a USB one anyway for voice recognition)
@@ -12,4 +12,4 @@
    need this as raspberry pi won't read analogue
 *9.SMT16030 temperature sensor (http://www.farnell.com/datasheets/124685.pdf)
 
-Put these sensors on a board that plugs into the raspi's GPIO (PIR may need to be mounted on wires though)
+Put these sensors on a board that plugs into the raspi's GPIO (for version 3, max 1.2A from 5V USB and GPIO, 50mA from 3v3 GPIO)

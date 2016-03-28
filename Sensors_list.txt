@@ -13,3 +13,7 @@
 *9.SMT16030 temperature sensor (http://www.farnell.com/datasheets/124685.pdf)
 
 Put these sensors on a board that plugs into the raspi's GPIO (for version 3, max 1.2A from 5V USB and GPIO, 50mA from 3v3 GPIO)
+
+pwm reading on the rpi:
+-https://github.com/stegmannt/rpi-pt100/blob/master/pt100.c
+-http://abyz.co.uk/rpi/pigpio/

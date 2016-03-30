@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:agg-kicad
 LIBS:magic-mirror
+LIBS:Sensors-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -47,13 +48,13 @@ $EndDescr
 $Comp
 L MSP40_GDF U?
 U 1 1 56F6F3A1
-P 7200 3200
-F 0 "U?" H 6900 3400 60  0000 L CNN
-F 1 "MSP40_GDF" H 7600 3400 60  0000 R CNN
-F 2 "" H 7200 3200 60  0000 C CNN
-F 3 "http://www.memsensing.com/webupfile/1439885201641144363.7-CHS.pdf" H 7200 3200 60  0001 C CNN
-F 4 "Value" H 7200 3200 60  0001 C CNN "Farnell"
-	1    7200 3200
+P 1700 2750
+F 0 "U?" H 1400 2950 60  0000 L CNN
+F 1 "MSP40_GDF" H 2100 2950 60  0000 R CNN
+F 2 "Sensors:MSP40_GDF" H 1700 2750 60  0001 C CNN
+F 3 "http://www.memsensing.com/webupfile/1439885201641144363.7-CHS.pdf" H 1700 2750 60  0001 C CNN
+F 4 "Value" H 1700 2750 60  0001 C CNN "Farnell"
+	1    1700 2750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -335,24 +336,333 @@ Wire Wire Line
 $Comp
 L smartec_UTI U?
 U 1 1 56F70350
-P 7650 4200
-F 0 "U?" H 7350 4750 60  0000 C CNN
-F 1 "smartec_UTI" H 7750 4750 60  0000 C CNN
-F 2 "" H 7600 4350 60  0000 C CNN
-F 3 "" H 7600 4350 60  0000 C CNN
-	1    7650 4200
+P 4700 2550
+F 0 "U?" H 4400 3100 60  0000 C CNN
+F 1 "smartec_UTI" H 4800 3100 60  0000 C CNN
+F 2 "Sensors:DIP-16_W7.62mm_LongPads" H 4650 2700 60  0001 C CNN
+F 3 "" H 4650 2700 60  0000 C CNN
+F 4 "Value" H 4700 2550 60  0001 C CNN "Farnell"
+	1    4700 2550
 	1    0    0    -1  
 $EndComp
 $Comp
 L SMT16030 U?
 U 1 1 56F705BB
-P 8600 5300
-F 0 "U?" H 8600 5500 60  0000 C CNN
-F 1 "SMT16030" H 8600 5100 60  0000 C CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Molded_Wide" H 8400 5300 60  0001 C CNN
-F 3 "" H 8400 5300 60  0000 C CNN
-F 4 "Value" H 8600 5300 60  0001 C CNN "Farnell"
-	1    8600 5300
+P 6950 5200
+F 0 "U?" H 6950 5400 60  0000 C CNN
+F 1 "SMT16030" H 6950 5000 60  0000 C CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Molded_Wide" H 6750 5200 60  0001 C CNN
+F 3 "" H 6750 5200 60  0000 C CNN
+F 4 "Value" H 6950 5200 60  0001 C CNN "Farnell"
+	1    6950 5200
 	1    0    0    -1  
 $EndComp
+$Comp
+L 5v #PWR?
+U 1 1 56F8071B
+P 4100 2050
+F 0 "#PWR?" H 4100 2160 50  0001 L CNN
+F 1 "5v" H 4100 2140 50  0000 C CNN
+F 2 "" H 4100 2050 60  0000 C CNN
+F 3 "" H 4100 2050 60  0000 C CNN
+	1    4100 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56F80806
+P 4100 2300
+F 0 "#PWR?" H 4100 2050 50  0001 C CNN
+F 1 "GND" H 4100 2150 50  0000 C CNN
+F 2 "" H 4100 2300 50  0000 C CNN
+F 3 "" H 4100 2300 50  0000 C CNN
+	1    4100 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4150 2100 4100 2100
+Wire Wire Line
+	4100 2100 4100 2050
+Wire Wire Line
+	4150 2300 4100 2300
+$Comp
+L 5v #PWR?
+U 1 1 56F82575
+P 5700 5200
+F 0 "#PWR?" H 5700 5310 50  0001 L CNN
+F 1 "5v" H 5700 5290 50  0000 C CNN
+F 2 "" H 5700 5200 60  0000 C CNN
+F 3 "" H 5700 5200 60  0000 C CNN
+	1    5700 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 5300 6550 5300
+$Comp
+L GND #PWR?
+U 1 1 56F8278A
+P 6550 5550
+F 0 "#PWR?" H 6550 5300 50  0001 C CNN
+F 1 "GND" H 6550 5400 50  0000 C CNN
+F 2 "" H 6550 5550 50  0000 C CNN
+F 3 "" H 6550 5550 50  0000 C CNN
+	1    6550 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 5300 6550 5550
+Wire Wire Line
+	6100 5200 6600 5200
+Text Notes 4050 4400 0    60   ~ 0
+Todo:\n-Schematic\n-ERC\n-Check footprints (make sure kicad defaults are OK)\n-Export netlist\n-Route board (make sure it sits above raspi, female header facing downwards)\n-Check circuit (especially pressure thing) on breadboard before sending off
+Wire Wire Line
+	2200 2850 2250 2850
+Wire Wire Line
+	2250 2850 2250 2750
+Wire Wire Line
+	2250 2750 2200 2750
+Text Label 5900 5100 0    60   ~ 0
+thermo_out_5v
+Wire Wire Line
+	5900 5100 6600 5100
+Text Label 5800 2100 2    60   ~ 0
+uti_out_5v
+Wire Wire Line
+	5250 2100 5800 2100
+Text Label 6050 2700 0    60   ~ 0
+thermo_out_3v3
+Text Label 6050 2400 0    60   ~ 0
+uti_out_3v3
+Text Label 8600 2400 2    60   ~ 0
+uti_out_5v
+$Comp
+L 5v #PWR?
+U 1 1 56F95DCF
+P 5550 2250
+F 0 "#PWR?" H 5550 2360 50  0001 L CNN
+F 1 "5v" H 5550 2340 50  0000 C CNN
+F 2 "" H 5550 2250 60  0000 C CNN
+F 3 "" H 5550 2250 60  0000 C CNN
+	1    5550 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56F95E32
+P 5400 2400
+F 0 "#PWR?" H 5400 2150 50  0001 C CNN
+F 1 "GND" H 5400 2250 50  0000 C CNN
+F 2 "" H 5400 2400 50  0000 C CNN
+F 3 "" H 5400 2400 50  0000 C CNN
+	1    5400 2400
+	1    0    0    -1  
+$EndComp
+Text Label 650  2650 0    60   ~ 0
++Vs_bridge
+Wire Wire Line
+	650  2650 1200 2650
+Text Label 3600 2500 0    60   ~ 0
++Vs_bridge
+Text Label 3600 2900 0    60   ~ 0
++Vs_bridge
+Wire Wire Line
+	3600 2500 4150 2500
+Wire Wire Line
+	3600 2900 4150 2900
+Text Label 650  2850 0    60   ~ 0
+gnd_bridge
+Wire Wire Line
+	1200 2850 650  2850
+Text Label 3600 2600 0    60   ~ 0
+gnd_bridge
+Text Label 3600 3000 0    60   ~ 0
+gnd_bridge
+Wire Wire Line
+	3600 2600 4150 2600
+Wire Wire Line
+	4150 3000 3600 3000
+Text Label 2850 2650 2    60   ~ 0
++Vout_bridge
+Text Label 3600 2800 0    60   ~ 0
++Vout_bridge
+Wire Wire Line
+	3600 2800 4150 2800
+Wire Wire Line
+	2850 2650 2200 2650
+Text Label 2850 2800 2    60   ~ 0
+-Vout_bridge
+Text Label 3600 2700 0    60   ~ 0
+-Vout_bridge
+Wire Wire Line
+	3600 2700 4150 2700
+Wire Wire Line
+	2850 2800 2250 2800
+Connection ~ 2250 2800
+$Comp
+L GND #PWR?
+U 1 1 56F96EC1
+P 5400 2800
+F 0 "#PWR?" H 5400 2550 50  0001 C CNN
+F 1 "GND" H 5400 2650 50  0000 C CNN
+F 2 "" H 5400 2800 50  0000 C CNN
+F 3 "" H 5400 2800 50  0000 C CNN
+	1    5400 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L 5v #PWR?
+U 1 1 56F96EE1
+P 5550 3000
+F 0 "#PWR?" H 5550 3110 50  0001 L CNN
+F 1 "5v" H 5550 3090 50  0000 C CNN
+F 2 "" H 5550 3000 60  0000 C CNN
+F 3 "" H 5550 3000 60  0000 C CNN
+	1    5550 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5400 2800 5250 2800
+Wire Wire Line
+	5250 2900 5300 2900
+Wire Wire Line
+	5300 2900 5300 2800
+Connection ~ 5300 2800
+Wire Wire Line
+	5250 2300 5550 2300
+Wire Wire Line
+	5550 2250 5550 2600
+Wire Wire Line
+	5550 2600 5250 2600
+Connection ~ 5550 2300
+Wire Wire Line
+	5400 2400 5250 2400
+Wire Wire Line
+	5250 2500 5300 2500
+Wire Wire Line
+	5300 2500 5300 2400
+Connection ~ 5300 2400
+Wire Wire Line
+	5250 3000 5550 3000
+Text Label 8600 2700 2    60   ~ 0
+thermo_out_5v
+$Comp
+L R R?
+U 1 1 56F97419
+P 5950 5200
+F 0 "R?" V 6030 5200 50  0000 C CNN
+F 1 "220" V 5950 5200 50  0000 C CNN
+F 2 "" V 5880 5200 50  0000 C CNN
+F 3 "" H 5950 5200 50  0000 C CNN
+F 4 "Value" H 5950 5200 60  0001 C CNN "Farnell"
+	1    5950 5200
+	0    1    1    0   
+$EndComp
+$Comp
+L C C?
+U 1 1 56F974CE
+P 6200 5350
+F 0 "C?" H 6225 5450 50  0000 L CNN
+F 1 "100nF" H 6225 5250 50  0000 L CNN
+F 2 "" H 6238 5200 50  0000 C CNN
+F 3 "" H 6200 5350 50  0000 C CNN
+F 4 "Value" H 6200 5350 60  0001 C CNN "Farnell"
+	1    6200 5350
+	1    0    0    -1  
+$EndComp
+Text Notes 5650 5550 0    60   ~ 0
+0.1 - 1uF
+Wire Wire Line
+	5700 5200 5800 5200
+Connection ~ 6200 5200
+Wire Wire Line
+	6550 5500 6200 5500
+Connection ~ 6550 5500
+Text Label 9550 2950 2    60   ~ 0
+uti_out_3v3
+Text Label 9550 2750 2    60   ~ 0
+thermo_out_3v3
+Wire Wire Line
+	9550 2950 9850 2950
+Wire Wire Line
+	9850 2750 9550 2750
+$Comp
+L level_converter U?
+U 1 1 56FC3C9A
+P 6800 2400
+F 0 "U?" H 7050 2500 60  0000 C CNN
+F 1 "level_converter" H 7500 2500 60  0000 C CNN
+F 2 "Sensors:Level_converter" H 6800 2400 60  0001 C CNN
+F 3 "http://www.ebay.com/itm/5PCS-IIC-I2C-Logic-Level-Converter-Bi-Directional-Module-5V-to-3-3V-for-Arduino-/281643083290?hash=item41933c661a:g:kw0AAOSwpDdVE9cc" H 6800 2400 60  0001 C CNN
+F 4 "Value" H 6800 2400 60  0001 C CNN "Farnell"
+	1    6800 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L 5v #PWR?
+U 1 1 56FC42BB
+P 8000 2850
+F 0 "#PWR?" H 8000 2960 50  0001 L CNN
+F 1 "5v" H 8000 2940 50  0000 C CNN
+F 2 "" H 8000 2850 60  0000 C CNN
+F 3 "" H 8000 2850 60  0000 C CNN
+	1    8000 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3v3 #PWR?
+U 1 1 56FC4348
+P 6700 2850
+F 0 "#PWR?" H 6700 2960 50  0001 L CNN
+F 1 "3v3" H 6700 2940 50  0000 C CNN
+F 2 "" H 6700 2850 60  0000 C CNN
+F 3 "" H 6700 2850 60  0000 C CNN
+	1    6700 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 2900 8000 2900
+Wire Wire Line
+	8000 2900 8000 2850
+Wire Wire Line
+	6700 2850 6700 2900
+Wire Wire Line
+	6700 2900 6800 2900
+$Comp
+L GND #PWR?
+U 1 1 56FC449B
+P 6750 3050
+F 0 "#PWR?" H 6750 2800 50  0001 C CNN
+F 1 "GND" H 6750 2900 50  0000 C CNN
+F 2 "" H 6750 3050 50  0000 C CNN
+F 3 "" H 6750 3050 50  0000 C CNN
+	1    6750 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56FC44D8
+P 7950 3050
+F 0 "#PWR?" H 7950 2800 50  0001 C CNN
+F 1 "GND" H 7950 2900 50  0000 C CNN
+F 2 "" H 7950 3050 50  0000 C CNN
+F 3 "" H 7950 3050 50  0000 C CNN
+	1    7950 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 3000 7900 3000
+Wire Wire Line
+	7950 3050 7950 3000
+Wire Wire Line
+	6750 3050 6750 3000
+Wire Wire Line
+	6750 3000 6800 3000
+Wire Wire Line
+	6800 2700 6050 2700
+Wire Wire Line
+	6050 2400 6800 2400
+Wire Wire Line
+	8600 2400 7900 2400
+Wire Wire Line
+	7900 2700 8600 2700
 $EndSCHEMATC
